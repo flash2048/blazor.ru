@@ -1,0 +1,6 @@
+- name: Введение
+  href: intro.md
+- name: Компоненты
+  items:
+  -  name: "BlazorTable - компонент таблица многоразового использования для Blazor"
+     href: components/How_to_create_a_table_blazor_component.md
