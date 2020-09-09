@@ -1,0 +1,31 @@
+﻿@inherits TableBase<TItem>
+@typeparam TItem
+<table class="table table-striped">
+    <thead>
+        <tr class="">@TableHeader</tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ItemList)
+        {
+            <tr class="">@TableRow(item)</tr>
+        }
+    </tbody>
+</table>
+<div class="pagination">
+    <button class="btn btn-info" @onclick=@(async () => SetPagerSize(PaginationAction.Back))>&laquo;</button>
+    <button class="btn btn-secondary" @onclick=@(async () => NavigateToPage(PaginationAction.Previous))>Пред.</button>
+    @for (int i = StartPage; i <= EndPage; i++)
+    {
+        var currentPage = i;
+        <button class="btn @(currentPage == CurPage ? "currentpage" : string.Empty)" @onclick=@(async () => UpdateList(currentPage))>
+            @currentPage
+        </button>
+    }
+    <button class="btn btn-secondary" @onclick=@(async () => NavigateToPage(PaginationAction.Next))>След.</button>
+    <button class="btn btn-info" @onclick=@(async () => SetPagerSize(PaginationAction.Forward))>&raquo;</button>
+    <span class="btn btn-link disabled">Page @CurPage of @PagesCount</span>
+</div>
+<head>
+    <link rel="stylesheet" type="text/css" href="_content/BlazorTable/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="_content/BlazorTable/css/bootstrap/bootstrap.min.css">
+</head>

@@ -10,7 +10,9 @@
       {
         "files": [
           "articles/**.md",
+          "samples/**.md",
           "articles/**/toc.yml",
+          "samples/**/toc.yml",
           "toc.yml",
           "*.md"
         ]

@@ -1,3 +1,4 @@
 - name: Статьи
   href: articles/
-
+- name: Примеры
+  href: samples/

@@ -1,0 +1,6 @@
+- name: Примеры
+  href: intro.md
+- name: Работа с таблицами
+  items:
+  -  name: "Компонент BlazorTable"
+     href: BlazorTable.md
